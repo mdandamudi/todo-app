@@ -2,7 +2,6 @@ import java.util.Collections;
 import java.util.List;
 
 public class ToDo {
-
     public List<String> add(List<String> todos, String item){
         todos.add(item);
         System.out.println(item+" is added to the list");

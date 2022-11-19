@@ -3,7 +3,6 @@ import java.util.List;
 import java.util.Scanner;
 
 public class UserInteractionHandler {
-
     public static final String ADD = "Add";
     public static final String DELETE = "Delete";
     public static final String DONE = "Mark Done";
