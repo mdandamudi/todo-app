@@ -4,26 +4,25 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
-        List<String> todos = new ArrayList<>();
-        todos.add("Get Bread");
-        todos.add("Get Oranges");
-        todos.add("Get Apples");
-
-        while(true) {
-            // Prompt the user for what they'd like to do
-            System.out.println("What would you like to do?");
-            // Take the input value from the user and add it to the list
-            Scanner scanner = new Scanner(System.in);
-            String value = scanner.nextLine();
-            todos.add(value);
-            // Print out the list
-            for(String todo:todos) {
-                System.out.println(todo);
-            }
-            if(value.equalsIgnoreCase("stop")){
-                break;
-            }
-        }
+        UserInteractionHandler userInteractionHandler = new UserInteractionHandler();
+        userInteractionHandler.start();
     }
 }
+
+/*
+    Todos - as many as you have a chance to do an feel comfortable tackling:
+    1. Ability to exit the loop, now that we're using the TodoApplication class
+    2. Having only 2 lines of code in "main" method:
+    ToDoApplication  toDoApp = new ToDoApplication();
+    toDoApp.start();
+    3. Making the todos variable be an instance field
+    4. Building out more menu options -> as many as you have time for:
+    -Add
+    -Delete
+    -Mark Done
+    -Edit
+    -Quit
+    4. Can you see any other classes we can create that would be good from an object-orientation perspective?
+    For example: a Todo.java class, or a UserInteractionHandler.java class?
+    5. Creating a GitHub user profile, and pushing this repo there.
+ */
