@@ -13,7 +13,7 @@ public class UserInteractionHandler {
 
     public void start() {
         toDo = new ToDo();
-        List<String> listofActions = new ArrayList<String>(
+        List<String> listofActions = new ArrayList<String>();
         listofActions.add(ADD);
         listofActions.add(DELETE);
         listofActions.add(DONE);
