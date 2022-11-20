@@ -34,21 +34,21 @@ public class UserInteractionHandler {
             if (value.equalsIgnoreCase(ADD)) {
                 System.out.println("Enter an errand to add:");
                 String errand = getInputFromUser();
-                todos = toDo.add(todos, errand);
+                toDo.add(todos, errand);
             } else if (value.equalsIgnoreCase(DELETE)) {
                 System.out.println("Enter an errand to delete:");
                 String errand = getInputFromUser();
-                todos = toDo.delete(todos, errand);
+                toDo.delete(todos, errand);
             } else if (value.equalsIgnoreCase(DONE)) {
                 System.out.println("Enter an errand to update:");
                 String errand = getInputFromUser();
-                todos = toDo.markDone(todos, errand);
+                 toDo.markDone(todos, errand);
             } else if (value.equalsIgnoreCase(EDIT)) {
                 System.out.println("Enter an errand to replace:");
                 String errand = getInputFromUser();
                 System.out.println("Enter an errand to replace with:");
                 String updatedItem = getInputFromUser();
-                todos = toDo.edit(todos, errand, updatedItem);
+                toDo.edit(todos, errand, updatedItem);
             } else if (value.equalsIgnoreCase(PRINT)) {
                 toDo.print(todos);
             } else if (value.equalsIgnoreCase(QUIT)) {
