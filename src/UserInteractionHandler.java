@@ -13,60 +13,54 @@ public class UserInteractionHandler {
 
     public void start() {
         toDo = new ToDo();
-        List<String> listofActions = new ArrayList<String>();
-        listofActions.add(ADD);
-        listofActions.add(DELETE);
-        listofActions.add(DONE);
-        listofActions.add(EDIT);
-        listofActions.add(QUIT);
+        List<String> listOfActions = new ArrayList<>();
+        listOfActions.add(ADD);
+        listOfActions.add(DELETE);
+        listOfActions.add(DONE);
+        listOfActions.add(EDIT);
+        listOfActions.add(QUIT);
+
         System.out.println("Application started");
-        for (String action : listofActions) {
+        for (String action : listOfActions) {
             System.out.println(action);
         }
-        List<String> todos = new ArrayList<String>();
-        String value = null;
+
+        List<String> todos = new ArrayList<>(); // polymorphism
+        String value;
 
         while (true) {
-            System.out.println("Choose any action(Add,Edit,Delete,Done,Quit):");
-           value = getInputfromUser();
+            System.out.println("Choose any action(Add,Edit,Delete,Done,Print,Quit):");
+            value = getInputFromUser();
             if (value.equalsIgnoreCase(ADD)) {
                 System.out.println("Enter an errand to add:");
-                String errand = getInputfromUser();
+                String errand = getInputFromUser();
                 todos = toDo.add(todos, errand);
-            }
-            else if (value.equalsIgnoreCase(DELETE)) {
+            } else if (value.equalsIgnoreCase(DELETE)) {
                 System.out.println("Enter an errand to delete:");
-                String errand =  getInputfromUser();
+                String errand = getInputFromUser();
                 todos = toDo.delete(todos, errand);
-            }
-            else if (value.equalsIgnoreCase(DONE)) {
+            } else if (value.equalsIgnoreCase(DONE)) {
                 System.out.println("Enter an errand to update:");
-                String errand =  getInputfromUser();
+                String errand = getInputFromUser();
                 todos = toDo.markDone(todos, errand);
-            }
-            else if (value.equalsIgnoreCase(EDIT)) {
+            } else if (value.equalsIgnoreCase(EDIT)) {
                 System.out.println("Enter an errand to replace:");
-                String errand =  getInputfromUser();
+                String errand = getInputFromUser();
                 System.out.println("Enter an errand to replace with:");
-                String updatedItem =  getInputfromUser();
+                String updatedItem = getInputFromUser();
                 todos = toDo.edit(todos, errand, updatedItem);
-            }
-            else if (value.equalsIgnoreCase(PRINT)) {
+            } else if (value.equalsIgnoreCase(PRINT)) {
                 toDo.print(todos);
-            }
-            else if (value.equalsIgnoreCase(QUIT)) {
-               break;
-            }
-            else{
+            } else if (value.equalsIgnoreCase(QUIT)) {
+                break;
+            } else {
                 System.out.println("Invalid Action. Please choose a valid action(Add,Edit,Delete,Mark Done,Quit)");
             }
         }
-
     }
 
-    public String getInputfromUser(){
-     Scanner  scanner = new Scanner(System.in);
-     String value = scanner.nextLine();
-        return value;
+    public String getInputFromUser() {
+        Scanner scanner = new Scanner(System.in);
+        return scanner.nextLine();
     }
 }

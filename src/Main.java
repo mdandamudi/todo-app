@@ -25,4 +25,8 @@ public class Main {
     4. Can you see any other classes we can create that would be good from an object-orientation perspective?
     For example: a Todo.java class, or a UserInteractionHandler.java class?
     5. Creating a GitHub user profile, and pushing this repo there.
+    6. Printing out index next to todo, and then delete and edit happen by index. For example:
+            0. Get bread
+            1. Get eggs
+            3. Get snack
  */
